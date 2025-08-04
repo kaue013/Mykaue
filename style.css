@@ -85,6 +85,25 @@ h1 {
   margin-bottom: 8px;
   border-radius: 6px;
   transition: box-shadow 0.2s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Botão "Me candidatar" */
+.btn-candidatar {
+  background-color: #28a745;
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-candidatar:hover {
+  background-color: #218838;
 }
 
 .vagas li:hover {
@@ -108,5 +127,13 @@ h1 {
 
   .vagas li {
     font-size: 14px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-candidatar {
+    margin-top: 8px;
+    align-self: flex-end;
   }
 }
+
