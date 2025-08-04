@@ -1,25 +1,39 @@
+/* Estilo geral */
 body {
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
   margin: 0;
   padding: 0;
   text-align: center;
+  color: #333;
 }
 
+/* Container da introdução */
 .intro-container {
-  padding: 60px 20px;
+  padding: 60px 20px 40px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
+/* Logo */
 .logo {
   width: 120px;
   margin-bottom: 20px;
 }
 
+/* Título principal */
 h1 {
   font-size: 28px;
-  color: #333;
+  margin-bottom: 10px;
 }
 
+/* Subtítulo */
+.intro-container p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Botão principal */
 .botao {
   display: inline-block;
   padding: 12px 24px;
@@ -28,8 +42,71 @@ h1 {
   text-decoration: none;
   border-radius: 5px;
   margin-top: 20px;
+  transition: background-color 0.3s ease;
 }
 
 .botao:hover {
   background-color: #006edc;
+}
+
+/* Imagem de banner */
+.banner img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  margin-bottom: 30px;
+}
+
+/* Seção de vagas */
+.vagas {
+  padding: 40px 20px;
+  background-color: #eef2f5;
+}
+
+.vagas h2 {
+  font-size: 24px;
+  margin-bottom: 25px;
+  color: #1e90ff;
+}
+
+/* Lista de vagas */
+.vagas ul {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: auto;
+  text-align: left;
+}
+
+.vagas li {
+  padding: 12px 16px;
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  transition: box-shadow 0.2s;
+}
+
+.vagas li:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .logo {
+    width: 90px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .botao {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .vagas li {
+    font-size: 14px;
+  }
 }
