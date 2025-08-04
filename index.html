@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Guaru Empregos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Guaru Empregos - Cadastre-se</h1>
+  <form action="cadastro.php" method="POST" enctype="multipart/form-data">
+    <label>Nome Completo:</label><br>
+    <input type="text" name="nome" required><br><br>
+
+    <label>CPF:</label><br>
+    <input type="text" name="cpf" required><br><br>
+
+    <label>Currículo (PDF ou imagem):</label><br>
+    <input type="file" name="documento" required><br><br>
+
+    <button type="submit">Enviar Cadastro</button>
+  </form>
+</body>
+</html>
+  
