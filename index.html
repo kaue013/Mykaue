@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Guarujá Empregos</title>
   <style>
+    /* ESTILO GERAL */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -12,6 +13,7 @@
       color: #333;
     }
 
+    /* INTRODUÇÃO COM FUNDO */
     .intro-container {
       position: relative;
       padding: 80px 20px;
@@ -107,14 +109,15 @@
       background-color: #0056b3;
     }
 
+    /* SEÇÃO DE VAGAS */
     .vagas {
       padding: 40px 20px;
       background-color: #eef2f5;
     }
 
     .vagas h2 {
-      font-size: 28px;
-      margin-bottom: 25px;
+      font-size: 32px;
+      margin-bottom: 30px;
       color: #1e90ff;
       text-align: center;
     }
@@ -127,16 +130,19 @@
     }
 
     .lista-vagas li {
-      padding: 12px 16px;
+      padding: 20px;
       border-bottom: 1px solid #ccc;
       background-color: #fff;
-      margin-bottom: 8px;
-      border-radius: 6px;
+      margin-bottom: 12px;
+      border-radius: 8px;
       transition: box-shadow 0.2s;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      font-size: 20px;
+      line-height: 1.6;
+      color: #111;
     }
 
     .lista-vagas li:hover {
@@ -147,9 +153,10 @@
       background-color: #28a745;
       color: white;
       text-decoration: none;
-      padding: 8px 16px;
-      border-radius: 4px;
-      font-size: 14px;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-size: 18px;
+      font-weight: bold;
       transition: background-color 0.3s ease;
     }
 
@@ -161,6 +168,7 @@
       display: none;
     }
 
+    /* FORMULÁRIO */
     form {
       background-color: #ffffff;
       padding: 30px;
@@ -206,6 +214,7 @@
       background-color: #006edc;
     }
 
+    /* RESPONSIVO */
     @media (max-width: 600px) {
       .logo {
         width: 130px;
@@ -225,67 +234,71 @@
       }
 
       .lista-vagas li {
-        font-size: 14px;
+        font-size: 18px;
+        padding: 16px;
         flex-direction: column;
         align-items: flex-start;
       }
 
       .btn-candidatar {
-        margin-top: 8px;
+        margin-top: 10px;
         align-self: flex-end;
+        font-size: 16px;
+        padding: 10px 16px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Introdução -->
+  <!-- INTRODUÇÃO -->
   <div class="intro-container">
-    <img src="Bandeira_de_Guarujá.png" alt="Logo Guarujá Empregos" class="logo">
+    <img src="Bandeira_de_Guarujá.png" alt="Logo Guarujá Empregos" class="logo" />
     <h1>Bem-vindo ao Guarujá Empregos</h1>
     <p>Conectando talentos com oportunidades</p>
     <a href="#secao-vagas" class="botao" onclick="mostrarVagas()">Ver Vagas</a>
   </div>
 
-  <!-- Banner -->
+  <!-- BANNER -->
   <div class="banner">
-    <img src="trabalhadores.jpg" alt="Imagem de pessoas trabalhando">
+    <img src="trabalhadores.jpg" alt="Imagem de pessoas trabalhando" />
   </div>
 
-  <!-- Botão para abrir vagas -->
+  <!-- BOTÃO DE VAGAS -->
   <div style="text-align: center;">
     <button class="btn-ver-vagas" onclick="mostrarVagas()">Abrir Vagas Disponíveis</button>
   </div>
 
-  <!-- Lista de vagas -->
+  <!-- VAGAS -->
   <section id="secao-vagas" class="vagas hidden">
     <h2>Vagas Disponíveis</h2>
     <ul class="lista-vagas" id="lista-vagas">
-      <!-- Vagas inseridas aqui -->
+      <!-- As vagas são adicionadas com JavaScript -->
     </ul>
   </section>
 
-  <!-- Formulário de candidatura -->
+  <!-- FORMULÁRIO -->
   <form id="formulario" class="hidden">
     <h3>Formulário de Candidatura</h3>
     <label for="nome">Nome Completo</label>
-    <input type="text" id="nome" name="nome" required>
+    <input type="text" id="nome" name="nome" required />
 
     <label for="cpf">CPF</label>
-    <input type="text" id="cpf" name="cpf" required>
+    <input type="text" id="cpf" name="cpf" required />
 
     <label for="vaga">Vaga Selecionada</label>
-    <input type="text" id="vaga" name="vaga" readonly>
+    <input type="text" id="vaga" name="vaga" readonly />
 
     <label for="curriculo">Currículo (PDF)</label>
-    <input type="file" id="curriculo" name="curriculo" accept=".pdf" required>
+    <input type="file" id="curriculo" name="curriculo" accept=".pdf" required />
 
     <label for="documentos">Outros Documentos (opcional)</label>
-    <input type="file" id="documentos" name="documentos" multiple>
+    <input type="file" id="documentos" name="documentos" multiple />
 
     <button type="submit">Enviar Candidatura</button>
   </form>
 
+  <!-- JAVASCRIPT -->
   <script>
     const vagas = [
       "Ajudante de Pedreiro – Guarujá",
@@ -320,6 +333,7 @@
 
     function mostrarVagas() {
       document.getElementById('secao-vagas').classList.remove('hidden');
+      document.getElementById('secao-vagas').scrollIntoView({ behavior: 'smooth' });
     }
 
     function abrirFormulario(vaga) {
