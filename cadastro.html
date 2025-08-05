@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Candidatura</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Candidatar-se à vaga</h2>
+    <form action="https://formsubmit.co/SEUEMAIL@gmail.com" method="POST" enctype="multipart/form-data">
+      <input type="text" name="nome" placeholder="Seu nome completo" required>
+      <input type="text" name="cpf" placeholder="CPF" required>
+      <input type="email" name="email" placeholder="Seu e-mail" required>
+      <input type="file" name="curriculo" required>
+      <input type="file" name="documentos">
+      <textarea name="mensagem" placeholder="Mensagem ou observações"></textarea>
+      <button type="submit">Enviar Candidatura</button>
+    </form>
+  </div>
+
+</body>
+</html>
