@@ -4,10 +4,22 @@
   <meta charset="UTF-8">
   <title>Guarujá Empregos</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .hidden { display: none; }
+    .btn-ver-vagas {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn-ver-vagas:hover { background-color: #0056b3; }
+  </style>
 </head>
 <body class="home">
-
-  <!-- Introdução Principal -->
   <div class="intro-container">
     <img src="Bandeira_de_Guarujá.png" alt="Logo Guarujá Empregos" class="logo">
     <h1>Bem-vindo ao Guarujá Empregos</h1>
@@ -15,48 +27,44 @@
     <a href="cadastro.html" class="botao">Cadastre-se</a>
   </div>
 
-  <!-- Imagem Banner -->
   <div class="banner">
     <img src="trabalhadores.jpg" alt="Imagem de pessoas trabalhando">
   </div>
 
-  <!-- Introdução às Vagas -->
-  <section class="intro-vagas">
-    <p>Clique abaixo e veja as vagas disponíveis de emprego na sua área:</p>
-    <a href="#lista-vagas" class="botao">Ver Vagas Disponíveis</a>
-  </section>
+  <div style="text-align: center;">
+    <button class="btn-ver-vagas" onclick="mostrarVagas()">Abrir Vagas Disponíveis</button>
+  </div>
 
-  <!-- Lista de Vagas -->
-  <section class="vagas">
+  <section id="secao-vagas" class="vagas hidden">
     <h2>Vagas Disponíveis</h2>
-    <ul class="lista-vagas" id="lista-vagas">
-      <li><strong>Ajudante de Pedreiro</strong> – Guarujá <a href="cadastro.html" class="btn-candidatar">Me candidatar</a></li>
-      <li><strong>Auxiliar de Limpeza</strong> – Vicente de Carvalho <a href="cadastro.html" class="btn-candidatar">Me candidatar</a></li>
-      <li><strong>Repositor de Mercadoria</strong> – Centro <a href="cadastro.html" class="btn-candidatar">Me candidatar</a></li>
-      <li><strong>Atendente de Lanchonete</strong> – Enseada <a href="cadastro.html" class="btn-candidatar">Me candidatar</a></li>
-      <li><strong>Operador de Caixa</strong> – Morrinhos <a href="cadastro.html" class="btn-candidatar">Me candidatar</a></li>
-      <li><strong>Auxiliar de Cozinha</strong> – Jardim Boa Esperança <a href="cadastro.html" class="btn-candidatar">Me candidatar</a></li>
-      <li><strong>Servente de Obras</strong> – Santa Rosa <a href="cadastro.html" class="btn-candidatar">Me candidatar</a></li>
-      <li><strong>Motorista Categoria B</strong> – Pae Cará <a href="cadastro.html" class="btn-candidatar">Me candidatar</a></li>
-      <li><strong>Balconista de Farmácia</strong> – Vila Alice <a href="cadastro.html" class="btn-candidatar">Me candidatar</a></li>
-      <li><strong>Embalador</strong> – Vila Áurea <a href="cadastro.html" class="btn-candidatar">Me candidatar</a></li>
-      <li><strong>Garçom</strong> – Astúrias <a href="cadastro.html" class="btn-candidatar">Me candidatar</a></li>
-      <li><strong>Auxiliar de Produção</strong> – Centro <a href="cadastro.html" class="btn-candidatar">Me candidatar</a></li>
-      <li><strong>Faxineiro</strong> – Vila Zilda <a href="cadastro.html" class="btn-candidatar">Me candidatar</a></li>
-      <li><strong>Entregador de Aplicativo</strong> – Guarujá <a href="cadastro.html" class="btn-candidatar">Me candidatar</a></li>
-      <li><strong>Porteiro</strong> – Jardim Conceiçãozinha <a href="cadastro.html" class="btn-candidatar">Me candidatar</a></li>
-      <li><strong>Auxiliar de Escritório</strong> – Centro <a href="cadastro.html" class="btn-candidatar">Me candidatar</a></li>
-      <li><strong>Estoquista</strong> – Vila Edna <a href="cadastro.html" class="btn-candidatar">Me candidatar</a></li>
-      <li><strong>Promotor de Vendas</strong> – Enseada <a href="cadastro.html" class="btn-candidatar">Me candidatar</a></li>
-      <li><strong>Recepcionista</strong> – Vila Júlia <a href="cadastro.html" class="btn-candidatar">Me candidatar</a></li>
-      <li><strong>Auxiliar de Serviços Gerais</strong> – Morrinhos <a href="cadastro.html" class="btn-candidatar">Me candidatar</a></li>
+    <ul class="lista-vagas">
+      <li><strong>Ajudante de Pedreiro</strong> – Guarujá <a href="cadastro.html?vaga=Ajudante%20de%20Pedreiro" class="btn-candidatar">Me candidatar</a></li>
+      <li><strong>Auxiliar de Limpeza</strong> – Vicente de Carvalho <a href="cadastro.html?vaga=Auxiliar%20de%20Limpeza" class="btn-candidatar">Me candidatar</a></li>
+      <li><strong>Repositor de Mercadoria</strong> – Centro <a href="cadastro.html?vaga=Repositor%20de%20Mercadoria" class="btn-candidatar">Me candidatar</a></li>
+      <li><strong>Atendente de Lanchonete</strong> – Enseada <a href="cadastro.html?vaga=Atendente%20de%20Lanchonete" class="btn-candidatar">Me candidatar</a></li>
+      <li><strong>Operador de Caixa</strong> – Morrinhos <a href="cadastro.html?vaga=Operador%20de%20Caixa" class="btn-candidatar">Me candidatar</a></li>
+      <li><strong>Auxiliar de Cozinha</strong> – Jardim Boa Esperança <a href="cadastro.html?vaga=Auxiliar%20de%20Cozinha" class="btn-candidatar">Me candidatar</a></li>
+      <li><strong>Servente de Obras</strong> – Santa Rosa <a href="cadastro.html?vaga=Servente%20de%20Obras" class="btn-candidatar">Me candidatar</a></li>
+      <li><strong>Motorista Categoria B</strong> – Pae Cará <a href="cadastro.html?vaga=Motorista%20Categoria%20B" class="btn-candidatar">Me candidatar</a></li>
+      <li><strong>Balconista de Farmácia</strong> – Vila Alice <a href="cadastro.html?vaga=Balconista%20de%20Farmácia" class="btn-candidatar">Me candidatar</a></li>
+      <li><strong>Embalador</strong> – Vila Áurea <a href="cadastro.html?vaga=Embalador" class="btn-candidatar">Me candidatar</a></li>
+      <li><strong>Garçom</strong> – Astúrias <a href="cadastro.html?vaga=Garçom" class="btn-candidatar">Me candidatar</a></li>
+      <li><strong>Auxiliar de Produção</strong> – Centro <a href="cadastro.html?vaga=Auxiliar%20de%20Produção" class="btn-candidatar">Me candidatar</a></li>
+      <li><strong>Faxineiro</strong> – Vila Zilda <a href="cadastro.html?vaga=Faxineiro" class="btn-candidatar">Me candidatar</a></li>
+      <li><strong>Entregador de Aplicativo</strong> – Guarujá <a href="cadastro.html?vaga=Entregador%20de%20Aplicativo" class="btn-candidatar">Me candidatar</a></li>
+      <li><strong>Porteiro</strong> – Jardim Conceiçãozinha <a href="cadastro.html?vaga=Porteiro" class="btn-candidatar">Me candidatar</a></li>
+      <li><strong>Auxiliar de Escritório</strong> – Centro <a href="cadastro.html?vaga=Auxiliar%20de%20Escritório" class="btn-candidatar">Me candidatar</a></li>
+      <li><strong>Estoquista</strong> – Vila Edna <a href="cadastro.html?vaga=Estoquista" class="btn-candidatar">Me candidatar</a></li>
+      <li><strong>Promotor de Vendas</strong> – Enseada <a href="cadastro.html?vaga=Promotor%20de%20Vendas" class="btn-candidatar">Me candidatar</a></li>
+      <li><strong>Recepcionista</strong> – Vila Júlia <a href="cadastro.html?vaga=Recepcionista" class="btn-candidatar">Me candidatar</a></li>
+      <li><strong>Auxiliar de Serviços Gerais</strong> – Morrinhos <a href="cadastro.html?vaga=Auxiliar%20de%20Serviços%20Gerais" class="btn-candidatar">Me candidatar</a></li>
     </ul>
   </section>
 
-  <!-- Rodapé -->
-  <footer>
-    <p>&copy; 2025 Guarujá Empregos - Todos os direitos reservados</p>
-  </footer>
-
+  <script>
+    function mostrarVagas() {
+      document.getElementById('secao-vagas').classList.remove('hidden');
+    }
+  </script>
 </body>
 </html>
