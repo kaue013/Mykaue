@@ -14,7 +14,7 @@
 
     .intro-container {
       padding: 80px 20px;
-      background-image: url('praia-enseada.jpg');
+      background-image: url('praiaenseada.png'); /* <- Atualizado aqui */
       background-size: cover;
       background-position: center;
       color: white;
@@ -287,5 +287,22 @@
     const listaVagas = document.getElementById("lista-vagas");
 
     vagas.forEach(vaga => {
-      const
+      const li = document.createElement("li");
+      li.innerHTML = `<strong>${vaga}</strong> <a href="#formulario" class="btn-candidatar" onclick="abrirFormulario('${vaga}')">Me candidatar</a>`;
+      listaVagas.appendChild(li);
+    });
+
+    function mostrarVagas() {
+      document.getElementById('secao-vagas').classList.remove('hidden');
+    }
+
+    function abrirFormulario(vaga) {
+      document.getElementById('formulario').classList.remove('hidden');
+      document.getElementById('vaga').value = vaga;
+      document.getElementById('formulario').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
+
         
