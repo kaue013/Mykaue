@@ -6,11 +6,13 @@
   <style>
     /* ESTILO GERAL */
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f2f2f2;
+      background: linear-gradient(to bottom, #a2d4f3, #ffffff);
       color: #333;
+      font-size: 18px;
+      line-height: 1.6;
     }
 
     /* INTRODUÇÃO COM FUNDO */
@@ -28,7 +30,6 @@
       justify-content: center;
       text-align: center;
       overflow: hidden;
-      z-index: 1;
     }
 
     .intro-container::before {
@@ -40,7 +41,7 @@
       background-image: inherit;
       background-size: cover;
       background-position: center;
-      filter: blur(8px);
+      filter: blur(6px);
       z-index: -2;
     }
 
@@ -50,40 +51,40 @@
       top: 0; left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 60, 90, 0.6);
       z-index: -1;
     }
 
     .logo {
-      width: 200px;
-      margin-bottom: 30px;
-    }
-
-    h1 {
-      font-size: 48px;
-      font-weight: bold;
+      width: 160px;
       margin-bottom: 20px;
     }
 
+    h1 {
+      font-size: 46px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
     .intro-container p {
-      font-size: 24px;
+      font-size: 22px;
       margin-bottom: 30px;
     }
 
     .botao {
       display: inline-block;
-      padding: 16px 32px;
-      background-color: #1e90ff;
-      color: #fff;
+      padding: 14px 30px;
+      background-color: #ffd700;
+      color: #003366;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 10px;
       font-size: 18px;
       font-weight: bold;
       transition: background-color 0.3s ease;
     }
 
     .botao:hover {
-      background-color: #006edc;
+      background-color: #ffc107;
     }
 
     .banner img {
@@ -91,17 +92,17 @@
       max-height: 300px;
       object-fit: cover;
       margin-bottom: 30px;
+      border-radius: 10px;
     }
 
     .btn-ver-vagas {
-      display: inline-block;
       margin: 30px auto;
       padding: 14px 28px;
       font-size: 18px;
       background-color: #007bff;
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
       cursor: pointer;
     }
 
@@ -112,41 +113,39 @@
     /* SEÇÃO DE VAGAS */
     .vagas {
       padding: 40px 20px;
-      background-color: #eef2f5;
+      background-color: #e6f2ff;
     }
 
     .vagas h2 {
-      font-size: 32px;
+      font-size: 36px;
       margin-bottom: 30px;
-      color: #1e90ff;
+      color: #0077cc;
       text-align: center;
     }
 
     .lista-vagas {
       list-style: none;
       padding: 0;
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
     }
 
     .lista-vagas li {
       padding: 20px;
-      border-bottom: 1px solid #ccc;
-      background-color: #fff;
+      background-color: #ffffff;
       margin-bottom: 12px;
-      border-radius: 8px;
-      transition: box-shadow 0.2s;
+      border-radius: 10px;
+      border-left: 6px solid #0077cc;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       font-size: 20px;
-      line-height: 1.6;
-      color: #111;
+      transition: box-shadow 0.2s;
     }
 
     .lista-vagas li:hover {
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     }
 
     .btn-candidatar {
@@ -154,7 +153,7 @@
       color: white;
       text-decoration: none;
       padding: 12px 20px;
-      border-radius: 6px;
+      border-radius: 8px;
       font-size: 18px;
       font-weight: bold;
       transition: background-color 0.3s ease;
@@ -172,16 +171,16 @@
     form {
       background-color: #ffffff;
       padding: 30px;
-      max-width: 600px;
-      margin: 40px auto;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      max-width: 700px;
+      margin: 50px auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     form h3 {
       margin-bottom: 20px;
-      color: #1e90ff;
-      font-size: 24px;
+      color: #0077cc;
+      font-size: 26px;
       text-align: center;
     }
 
@@ -193,49 +192,49 @@
 
     form input, form textarea {
       width: 100%;
-      padding: 10px;
-      margin-top: 5px;
+      padding: 12px;
+      margin-top: 6px;
       border: 1px solid #ccc;
-      border-radius: 6px;
+      border-radius: 8px;
+      font-size: 16px;
     }
 
     form button {
       margin-top: 20px;
-      padding: 12px;
-      background-color: #1e90ff;
+      padding: 14px;
+      background-color: #007bff;
       color: white;
       border: none;
-      border-radius: 6px;
-      font-size: 16px;
+      border-radius: 8px;
+      font-size: 18px;
       cursor: pointer;
     }
 
     form button:hover {
-      background-color: #006edc;
+      background-color: #0056b3;
     }
 
     /* RESPONSIVO */
     @media (max-width: 600px) {
       .logo {
-        width: 130px;
+        width: 100px;
       }
 
       h1 {
-        font-size: 32px;
+        font-size: 28px;
       }
 
       .intro-container p {
         font-size: 18px;
       }
 
-      .botao {
-        padding: 12px 24px;
+      .botao, .btn-ver-vagas, .btn-candidatar {
         font-size: 16px;
+        padding: 10px 20px;
       }
 
       .lista-vagas li {
         font-size: 18px;
-        padding: 16px;
         flex-direction: column;
         align-items: flex-start;
       }
@@ -243,8 +242,6 @@
       .btn-candidatar {
         margin-top: 10px;
         align-self: flex-end;
-        font-size: 16px;
-        padding: 10px 16px;
       }
     }
   </style>
@@ -255,7 +252,7 @@
   <div class="intro-container">
     <img src="Bandeira_de_Guarujá.png" alt="Logo Guarujá Empregos" class="logo" />
     <h1>Bem-vindo ao Guarujá Empregos</h1>
-    <p>Conectando talentos com oportunidades</p>
+    <p>Conectando talentos com oportunidades na nossa cidade</p>
     <a href="#secao-vagas" class="botao" onclick="mostrarVagas()">Ver Vagas</a>
   </div>
 
@@ -273,7 +270,7 @@
   <section id="secao-vagas" class="vagas hidden">
     <h2>Vagas Disponíveis</h2>
     <ul class="lista-vagas" id="lista-vagas">
-      <!-- As vagas são adicionadas com JavaScript -->
+      <!-- Adicionado via JS -->
     </ul>
   </section>
 
@@ -342,5 +339,6 @@
       document.getElementById('formulario').scrollIntoView({ behavior: 'smooth' });
     }
   </script>
+
 </body>
 </html>
