@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Guarujá Empregos</title>
+  <style>
+    /* ESTILO GERAL */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #a2d4f3, #ffffff);
+      color: #333;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    /* INTRODUÇÃO COM FUNDO */
+    .intro-container {
+      position: relative;
+      padding: 80px 20px;
+      background-image: url('praiaenseada.png');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .intro-container::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: inherit;
+      background-size: cover;
+      background-position: center;
+      filter: blur(6px);
+      z-index: -2;
+    }
+
+    .intro-container::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 60, 90, 0.6);
+      z-index: -1;
+    }
+
+    .logo {
+      width: 160px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 46px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .intro-container p {
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+
+    .botao {
+      display: inline-block;
+      padding: 14px 30px;
+      background-color: #ffd700;
+      color: #003366;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .botao:hover {
+      background-color: #ffc107;
+    }
+
+    .banner img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      margin-bottom: 30px;
+      border-radius: 10px;
+    }
+
+    .btn-ver-vagas {
+      margin: 30px auto;
+      padding: 14px 28px;
+      font-size: 18px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .btn-ver-vagas:hover {
+      background-color: #0056b3;
+    }
+
+    /* SEÇÃO DE VAGAS */
+    .vagas {
+      padding: 40px 20px;
+      background-color: #e6f2ff;
+    }
+
+    .vagas h2 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #0077cc;
+      text-align: center;
+    }
+
+    .lista-vagas {
+      list-style: none;
+      padding: 0;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .lista-vagas li {
+      padding: 20px;
+      background-color: #ffffff;
+      margin-bottom: 12px;
+      border-radius: 10px;
+      border-left: 6px solid #0077cc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 20px;
+      transition: box-shadow 0.2s;
+    }
+
+    .lista-vagas li:hover {
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-candidatar {
+      background-color: #28a745;
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-candidatar:hover {
+      background-color: #218838;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* FORMULÁRIO */
+    form {
+      background-color: #ffffff;
+      padding: 30px;
+      max-width: 700px;
+      margin: 50px auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    form h3 {
+      margin-bottom: 20px;
+      color: #0077cc;
+      font-size: 26px;
+      text-align: center;
+    }
+
+    form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
